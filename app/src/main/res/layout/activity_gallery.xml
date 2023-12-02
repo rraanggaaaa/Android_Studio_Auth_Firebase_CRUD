@@ -44,6 +44,7 @@
         android:fontFamily="@font/poppins"/>
 
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -61,7 +62,7 @@
 
 
                     <ImageView
-                        android:id="@+id/imgvw1"
+                        android:id="@+id/image_gallery"
                         android:layout_width="400dp"
                         android:layout_height="432dp"
                         android:padding="30dp"
@@ -100,6 +101,7 @@
                     android:background="@drawable/custom_bg_white">
 
                     <ImageView
+                        android:id="@+id/image_gallery2"
                         android:layout_width="400dp"
                         android:layout_height="432dp"
                         android:padding="30dp"
