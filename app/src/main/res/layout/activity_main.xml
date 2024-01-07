@@ -367,6 +367,21 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btn_find_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find / Contact Us"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                android:textColor="@color/pallet_dark"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <ImageView

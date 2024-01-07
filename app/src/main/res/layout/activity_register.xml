@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="username"
+                android:text="email"
                 android:textSize="12dp"/>
         </LinearLayout>
 
@@ -65,10 +65,12 @@
                 android:padding="20dp">
 
                 <EditText
+                    android:id="@+id/editTextEmail"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="email"
                     android:background="@null"
+                    android:importantForAutofill="auto"
                     android:textSize="15dp"/>
             </LinearLayout>
         </LinearLayout>
@@ -93,7 +95,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="email"
+                    android:text="password"
                     android:textSize="12dp"/>
             </LinearLayout>
 
@@ -110,10 +112,12 @@
                     android:padding="20dp">
 
                     <EditText
+                        android:id="@+id/editTextPassword"
                         android:layout_width="320dp"
                         android:layout_height="wrap_content"
-                        android:hint="Email"
+                        android:hint="Password"
                         android:background="@null"
+                        android:importantForAutofill="auto"
                         android:textSize="15dp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -134,8 +138,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="password"
-                android:textSize="12dp"/>
+                android:text="Re-type password"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -151,11 +155,13 @@
                 android:padding="20dp">
 
                 <EditText
+                    android:id="@+id/editTextRePassword"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="Confirm Password"
                     android:inputType="textPassword"
                     android:background="@null"
+                    android:importantForAutofill="auto"
                     android:textSize="15dp"/>
             </LinearLayout>
         </LinearLayout>
@@ -164,10 +170,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/btnCommit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -176,9 +183,10 @@
                 android:fontFamily="@font/poppins"
                 android:background="@drawable/custom_bg"
                 android:backgroundTint="@color/pallet"/>
+
         </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

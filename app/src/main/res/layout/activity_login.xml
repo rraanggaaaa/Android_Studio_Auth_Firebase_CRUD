@@ -63,10 +63,10 @@
                 android:padding="20dp">
 
                 <EditText
-                    android:id="@+id/editTextUsername"
+                    android:id="@+id/editTextEmail"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="Email"
                     android:background="@null"
                     android:textSize="15dp"/>
             </LinearLayout>

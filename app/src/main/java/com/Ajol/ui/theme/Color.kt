@@ -1,4 +1,4 @@
-package com.tmr9.ui.theme
+package com.Ajol.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,6 +1,5 @@
-package com.tmr9
+package com.Ajol
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 

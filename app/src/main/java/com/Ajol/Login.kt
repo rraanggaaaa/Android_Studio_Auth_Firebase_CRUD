@@ -1,4 +1,4 @@
-package com.tmr9
+package com.Ajol
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import com.tmr9.R.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class Login : ComponentActivity() {
 
@@ -19,22 +20,26 @@ class Login : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Thread.sleep(3000)
-        setContentView(layout.activity_login)
+        setContentView(R.layout.activity_login)
 
-        btnLogin = findViewById(id.btnLogin)
+        // Write a message to the database
+        val database = Firebase.database
+        val myRef = database.getReference("message")
+
+        btnLogin = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener {
             val intentlogin = Intent(this, MainActivity::class.java)
             startActivity(intentlogin)
         }
 
-        btnRegister = findViewById(id.btnRegister)
+        btnRegister = findViewById(R.id.btnRegister)
         btnRegister.setOnClickListener {
             val intentregister = Intent(this, Register::class.java)
             startActivity(intentregister)
         }
 
-        editTextUsername = findViewById(id.editTextUsername)
-        editTextPassword = findViewById(id.editTextPassword)
+        editTextUsername = findViewById(R.id.editTextEmail)
+        editTextPassword = findViewById(R.id.editTextPassword)
 
         editTextUsername.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
@@ -54,29 +59,21 @@ class Login : ComponentActivity() {
             false
         }
 
-
-        editTextUsername = findViewById(id.editTextUsername)
-        editTextPassword = findViewById(id.editTextPassword)
-
         editTextUsername.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                if (editTextUsername.text.isEmpty()) {
-                    showToast("Username Tidak Boleh Kosong! Mohon isi username terlebih dahulu.")
-                    editTextUsername.requestFocus()
-                } else {
-                    showToast("Username Telah Diisi!")
-                }
+            if (hasFocus && editTextUsername.text.isEmpty()) {
+                showToast("Username Tidak Boleh Kosong! Mohon isi username terlebih dahulu.")
+                editTextUsername.requestFocus()
+            } else if (hasFocus) {
+                showToast("Username Telah Diisi!")
             }
         }
 
         editTextPassword.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                if (editTextPassword.text.isEmpty()) {
-                    showToast("Password Tidak Boleh Kosong! Mohon isi password terlebih dahulu.")
-                    editTextPassword.requestFocus()
-                } else {
-                    showToast("Password Telah Diisi!")
-                }
+            if (hasFocus && editTextPassword.text.isEmpty()) {
+                showToast("Password Tidak Boleh Kosong! Mohon isi password terlebih dahulu.")
+                editTextPassword.requestFocus()
+            } else if (hasFocus) {
+                showToast("Password Telah Diisi!")
             }
         }
     }
