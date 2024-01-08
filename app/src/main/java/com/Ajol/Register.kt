@@ -72,6 +72,8 @@ class Register : ComponentActivity() {
                     "Password and Confirm Password do not match",
                     Toast.LENGTH_SHORT
                 ).show()
+                val intentlogin = Intent(this, Register::class.java)
+                startActivity(intentlogin)
             }
             auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
                 if (it.isSuccessful) {
@@ -82,6 +84,8 @@ class Register : ComponentActivity() {
                         "Successfully Singed Up",
                         Toast.LENGTH_SHORT
                     ).show()
+                    val intentlogin = Intent(this, Login::class.java)
+                    startActivity(intentlogin)
                 } else {
                     Toast.makeText(
                         this,

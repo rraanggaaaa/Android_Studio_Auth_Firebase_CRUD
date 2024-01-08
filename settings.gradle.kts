@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TMR9"
+rootProject.name = "Ajol"
 include(":app")

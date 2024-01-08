@@ -12,12 +12,17 @@ class MainActivity : ComponentActivity() {
     lateinit var tv_chatus : ImageView
     lateinit var tv_gallery : ImageView
     lateinit var tv_motor : ImageView
-    lateinit var tv_car : ImageView
     lateinit var btn_find_us : Button
-
+    lateinit var profile : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        profile = findViewById(R.id.profile)
+        profile.setOnClickListener {
+            val intentHistory = Intent(this, Profile::class.java)
+            startActivity(intentHistory)
+        }
 
         tv_history = findViewById(R.id.tv_history)
         tv_history.setOnLongClickListener {
